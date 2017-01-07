@@ -20,14 +20,29 @@ $(function () {
 });
 
 function appendDom(emp) {
-  var $emp = $('<div class="employee"></div>'); // create a div jQuery object
+  var $empName = $('<div id = "name" class = "employee"></div>'); // create a div jQuery object
+  var $empId = $('<div id = "empId" class = "employee"></div>');
+  var $empTitle = $('<div id = "empTitle" class = "employee"></div>');
+  var $empSalary = $('<div id = "empSalary" class = "employee"></div>');
+  var $totalMonthlySalary = 0;
 
-  $emp.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</p>'); // add our employee data
-  $emp.append('<p>' + emp.employeeIdNumber + '</p>');
+  var $empName = $empName.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</p>'); // add our employee data
+  var $empId = $empId.append('<p>' + emp.employeeIdNumber + '</p>');
+  var $empTitle = $empTitle.append('<p>' + emp.jobTitle + '</p>');
+  var $empSalary = $empSalary.append('<p>' + emp.annualSalary + '</p>');
 
-  $('#employees').append($emp); // append our div to the DOM
+  $('#employeeName').append($empName); // append our div to the DOM
+  $('#employeeId').append($empId);
+  $('#jobTitle').append($empTitle);
+  $('#salary').append($empSalary);
+
+  $totalMonthlySalary = Number($totalMonthlySalary + (emp.annualSalary/12));
+
+  $('#monthly').append($totalMonthlySalary);
+
 }
 
 function clearForm() {
   $('form').find('input[type=text]').val('');
+  $('form').find('input[type=number]').val('');
 }

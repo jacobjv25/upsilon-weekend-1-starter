@@ -1,0 +1,13 @@
+.list {
+  text-decoration: underline;
+  display: inline-block;
+  padding-right: 100px;
+
+}
+p {
+  display:inline-block;
+}
+
+#monthly {
+  display: inline-block;
+}

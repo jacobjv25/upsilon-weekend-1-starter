@@ -7,22 +7,76 @@
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="style.css">
     <script src="app.js" charset="utf-8"></script>
     </head>
   <body>
     <form>
       <label for="employeeFirstName">First Name</label>
       <input type="text" id="employeeFirstName" name="employeeFirstName" />
+
       <label for="employeeLastName">Last Name</label>
       <input type="text" id="employeeLastName" name="employeeLastName" />
+
       <label for="employeeIdNumber">ID Number</label>
       <input type="text" name="employeeIdNumber" />
+
+      <label for="jobTitle">Job Title</label>
+      <input type="text" name="jobTitle" />
+
+      <label for="annualSalary">Annual Salary</label>
+      <input type=number name="annualSalary" />
+
       <input type="submit" value="Submit" />
     </form>
 
-    <div id="employees">
-      <h2>Employees</h2>
-      <!-- to be added via JavaScript -->
+
+  <h2>Employees</h2>
+    <div id = "employeeName" class="list">
+      <h3>Employee Name</h3>
     </div>
+    <div id = "employeeId" class="list">
+      <h3>ID Number</h3>
+    </div>
+    <div id = "jobTitle" class="list">
+      <h3>Job Title</h3>
+    </div>
+    <div id = "salary" class="list">
+      <h3 >Annual Salary</h3>
+    </div>
+
+    <div id="employees">
+
+    </div>
+        <!--
+        <h3>Employee Name</h3>
+        </div>
+        <div id = "employeeId" class="list">
+          <h3>ID Number</h3>
+        </div>
+        <div id = "jobTtile" class="list">
+          <h3>Job Title</h3>
+        </div>
+        <div id = "salary" class="list">
+          <h3 >Annual Salary</h3>
+        </div>
+
+        <div class = "employeeList">
+
+        </div> -->
+      <!-- to be added via JavaScript -->
+    <!-- <div id="employees">
+
+    </div> -->
+    <h2>Monthly Salary Expenditures:</h2>
+    <div id = "monthly">
+
+    </div>
+    <form>
+      <label for="removeEmployee">Employee To Remove</label>
+      <input type="text" id="employeeToRemove" name="employeeToRemove" />
+      <input type="submit" value="Submit" />
+    </form>
+
   </body>
 </html>
