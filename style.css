@@ -1,3 +1,14 @@
+html {
+  width: 1300px;
+  margin: auto;
+}
+body {
+  background-color: #fff8ad;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  margin: 50px;
+  padding: 10px;
+  border: 3px solid #000000;
+}
 .list {
   text-decoration: underline;
   display: inline-block;
@@ -9,5 +20,19 @@ p {
 }
 
 #monthly {
+  /*display: inline-block;*/
+}
+
+#employeeRemoval {
+  border: 3px solid #000000;
+  padding: 10px;
+  margin: 10px;
+}
+/*form {
+  padding: 50px 50px;
   display: inline-block;
 }
+label {
+  padding: 100px 100px 100px 100px;
+
+}*/

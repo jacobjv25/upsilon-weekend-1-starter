@@ -1,7 +1,7 @@
 $(function () {
   console.log('document is ready');
 
-  $('form').on('submit', function (event) {
+  $('#submit').on('submit', function (event) {
     console.log('form submitted');
 
     event.preventDefault();
@@ -17,6 +17,18 @@ $(function () {
 
     clearForm();
   });
+
+  $('#employeeRemoval').on('submit', function (event) {
+
+    event.preventDefault();
+
+    var employeeRemove = event;
+
+    console.log("Removing " + employeeRemove);
+
+    clearForm();
+  })
+
 });
 
 function appendDom(emp) {
