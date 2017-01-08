@@ -29,10 +29,11 @@ p {
   margin: 10px;
 }
 /*form {
-  padding: 50px 50px;
+  padding: 50px auto;
   display: inline-block;
+  max-width: 500px;
 }
-label {
-  padding: 100px 100px 100px 100px;
+input {
+  padding: 50px auto;
 
 }*/
