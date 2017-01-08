@@ -15,8 +15,12 @@ $(function () {
 
     appendDom(formData);
 
+    appendSalary(formData.annualSalary);
+
     clearForm();
   });
+
+
 
   $('#employeeRemoval').on('submit', function (event) {
 
@@ -36,7 +40,7 @@ function appendDom(emp) {
   var $empId = $('<div id = "empId" class = "employee"></div>');
   var $empTitle = $('<div id = "empTitle" class = "employee"></div>');
   var $empSalary = $('<div id = "empSalary" class = "employee"></div>');
-  var $totalMonthlySalary = 0;
+
 
   var $empName = $empName.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</p>'); // add our employee data
   var $empId = $empId.append('<p>' + emp.employeeIdNumber + '</p>');
@@ -48,9 +52,26 @@ function appendDom(emp) {
   $('#jobTitle').append($empTitle);
   $('#salary').append($empSalary);
 
-  $totalMonthlySalary = Number($totalMonthlySalary + (emp.annualSalary/12));
+}
+
+function appendSalary(sal) {
+  var $salMonth = $('<div id = "salary"></div>');
+  var $totalMonthlySalary = 0 + Number($('#monthly').text());
+
+  console.log($totalMonthlySalary);
+
+  var $salMonth = $salMonth.append('<p>' + sal + '</p>');
+
+  $("#monthly").empty();
+
+  $totalMonthlySalary = Number($totalMonthlySalary + (sal/12));
 
   $('#monthly').append($totalMonthlySalary);
+
+
+  // console.log($totalMonthlySalary);
+  // console.log($monthlySalary);
+  // console.log(sal);
 
 }
 
