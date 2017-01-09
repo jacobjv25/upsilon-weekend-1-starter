@@ -1,6 +1,7 @@
 html {
   width: 1300px;
   margin: auto;
+  background-color: #999999;
 }
 body {
   background-color: #fff8ad;
@@ -19,21 +20,25 @@ p {
   display:inline-block;
 }
 
-#monthly {
-  /*display: inline-block;*/
-}
-
 #employeeRemoval {
   border: 3px solid #000000;
   padding: 10px;
   margin: 10px;
 }
-/*form {
-  padding: 50px auto;
+#head {
+  postion: fixed;
   display: inline-block;
-  max-width: 500px;
+  padding-right: 125px;
+  text-decoration: underline;
+  font-size: 20px;
 }
-input {
-  padding: 50px auto;
-
-}*/
+ul {
+  display: inline-block;
+  display: table;
+  table-layout: fixed;
+}
+li {
+  postion: fixed;
+  display: table-cell;
+  padding-right: 180px;
+}

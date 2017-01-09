@@ -1,4 +1,4 @@
-  var allEmployees = [];
+var $totalMonthlySalary = 0;
 
 $(function () {
   console.log('document is ready');
@@ -22,50 +22,31 @@ $(function () {
     clearForm();
   });
 
-
-
-  $('#employeeRemoval').on('submit', function (event) {
-
-    event.preventDefault();
-
-    var employeeRemove = event;
-
-    console.log("Removing " + employeeRemove);
-
-    removeEmp(event);
-
-    clearForm();
-  })
-
 });
 
 function appendDom(emp) {
-  var $empName = $('<div id = "name" class = "employee"></div>'); // create a div jQuery object
-  var $empId = $('<div id = "empId" class = "employee"></div>');
-  var $empTitle = $('<div id = "empTitle" class = "employee"></div>');
-  var $empSalary = $('<div id = "empSalary" class = "employee"></div>');
-  // var $empRemove = $('<button id = "remove"></button>');
-  var empObj = {emp};
+  var $emp = $('<div class = "employee"></div>');
+  var $list = $('<ul></ul>');
+  var $empName = $('<li>' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</li>');
+  var $id = $('<li>' + emp.employeeIdNumber + '</li>');
+  var $title = $('<li>' + emp.jobTitle + '</li>');
+  var $salary = $('<li id = "empSalary">' + emp.annualSalary + '</li>');
+  var $button = $('<li><button id = "delete">Delete</button></li>');
 
-  var $empName = $empName.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</p>'); // add our employee data
-  var $empId = $empId.append('<p>' + emp.employeeIdNumber + '</p>');
-  var $empTitle = $empTitle.append('<p>' + emp.jobTitle + '</p>');
-  var $empSalary = $empSalary.append('<p>' + emp.annualSalary + '</p>');
-  // var $empRemove = $empRemove.append('<p>' + $empRemove + '</p>');
+  $list.append($empName);
+  $list.append($id);
+  $list.append($title);
+  $list.append($salary);
+  $list.append($button);
+  $emp.append($list);
 
-  $('#employeeName').append($empName); // append our div to the DOM
-  $('#employeeId').append($empId);
-  $('#jobTitle').append($empTitle);
-  $('#salary').append($empSalary);
-  // $('#remove').append($empRemove);
-
-  allEmployees.push(empObj);
+  $('#employees').append($emp);
 
 }
 
 function appendSalary(sal) {
   var $salMonth = $('<div id = "salary"></div>');
-  var $totalMonthlySalary = 0 + Number($('#monthly').text());
+  $totalMonthlySalary = Number($('#monthly').text());
 
   console.log($totalMonthlySalary);
 
@@ -79,14 +60,21 @@ function appendSalary(sal) {
 
 }
 
-// function removeEmp(emp) {
-//   var employeeToRemove = emp;
-//   $("#employeeName p").each(function(i, emp){
-//     if($(emp).text()) === ($("#employeeName p").(text)) {
-//       $(emp).remove();
-//     }
-//   });
-// }
+$(document).on('click', '#delete', function() {
+
+  var empSalary = Number($(this).parent().parent().find('#empSalary').text());
+  console.log("Removing " + (empSalary/12));
+
+  $(this).parent().parent().parent().remove();
+
+  $('#monthly').empty();
+
+  $totalMonthlySalary = parseFloat(Number($totalMonthlySalary - (empSalary/12))).toFixed(2);
+
+  $('#monthly').append($totalMonthlySalary);
+
+  clearForm();
+});
 
 function clearForm() {
   $('form').find('input[type=text]').val('');
