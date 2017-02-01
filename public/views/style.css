@@ -17,13 +17,3 @@ body {
   text-decoration: underline;
   font-size: 20px;
 }
-ul {
-  display: inline-block;
-  display: table;
-  table-layout: fixed;
-}
-li {
-  postion: fixed;
-  display: table-cell;
-  padding-right: 180px;
-}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weekend 1</title>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="./scripts/client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="views/style.css">
+    </head>
+  <body class = "container" ng-app = "employeeApp" ng-controller = "EmployeeController as employeeSal">
+    <form>
+      <label for="employee">First Name</label>
+      <input type="text" ng-model = "employeeSal.employee.firstName" />
+
+      <label for="employeeLastName">Last Name</label>
+      <input type="text" ng-model = "employeeSal.employee.lastName" />
+
+      <label for="employeeIdNumber">ID Number</label>
+      <input type="number" ng-model = "employeeSal.employee.id"  />
+
+      <label for="jobTitle">Job Title</label>
+      <input type="text" ng-model = "employeeSal.employee.title"  />
+
+      <label for="annualSalary">Annual Salary</label>
+      <input type=number ng-model = "employeeSal.employee.salary" />
+
+      <button type="submit" ng-click = "employeeSal.addEmployee(employeeSal.employee)">Submit</button>
+    </form>
+    <p>
+      Adding Employee: {{ employeeSal.employee }}
+    </p>
+    <ul>
+      <li ng-repeat = "employee in employeeSal.allEmployees">
+        Name: {{ employee.firstName}} {{ employee.lastName }} ID Number: {{ employee.id }} Job Title: {{ employee.title}} Annual Salary: {{ employee.salary}}
+        <button type="submit" ng-click = "employeeSal.deleteEmployee($index)">Delete</button>
+      </li>
+    </ul>
+
+    <h2>Monthly Salary Expenditures:</h2>
+    <p>
+      {{ employeeSal.monthlySalary | currency }}
+    </p>
+  </body>
+</html>

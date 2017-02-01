@@ -1,0 +1,23 @@
+{
+  "name": "upsilon-weekend-1-starter",
+  "version": "1.0.0",
+  "description": "##This application records employee data and calculates total monthly salaries.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobjv25/upsilon-weekend-1-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobjv25/upsilon-weekend-1-starter/issues"
+  },
+  "homepage": "https://github.com/jacobjv25/upsilon-weekend-1-starter#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1"
+  }
+}
